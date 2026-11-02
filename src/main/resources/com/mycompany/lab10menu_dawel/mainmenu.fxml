@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -7,11 +8,11 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.lab10menu_dawel.MainmenuController">
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.lab10menu_dawel.MainmenuController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="270.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu text="_File">
             <items>
                   <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#handleNew" text="New" />
                   <MenuItem fx:id="openItem" mnemonicParsing="false" onAction="#handleOpen" text="Open" />
@@ -19,9 +20,9 @@
                   <MenuItem fx:id="saveItem" mnemonicParsing="false" text="Save As" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
+            <Menu text="_Edit">
               <items>
-                <MenuItem fx:id="gridItem" mnemonicParsing="false" onAction="#handleGrid" text="Use GridLines" />
+                  <CheckMenuItem fx:id="gridItem" mnemonicParsing="false" onAction="#handleGrid" text="Use GridLines" />
                   <MenuItem fx:id="copyItem" mnemonicParsing="false" onAction="#handleCopy" text="Copy" />
                   <Menu fx:id="searchMenu" mnemonicParsing="false" text="Search">
                     <items>
@@ -31,15 +32,15 @@
                   </Menu>
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Settings">
+            <Menu text="_Settings">
                <items>
-                  <RadioMenuItem fx:id="smallButton" mnemonicParsing="false" onAction="#handleSizeSmall" text="Small">
+                  <RadioMenuItem fx:id="smallItem" mnemonicParsing="false" onAction="#handleSizeSmall" text="Small">
                      <toggleGroup>
                         <ToggleGroup fx:id="radioGroup" />
                      </toggleGroup>
                   </RadioMenuItem>
-                  <RadioMenuItem fx:id="mediumButton" mnemonicParsing="false" onAction="#handleSizeMedium" text="Medium" toggleGroup="$radioGroup" />
-                  <RadioMenuItem fx:id="largeButton" mnemonicParsing="false" onAction="#handleSizeLarge" text="Large" toggleGroup="$radioGroup" />
+                  <RadioMenuItem fx:id="mediumItem" mnemonicParsing="false" onAction="#handleSizeMedium" text="Medium" toggleGroup="$radioGroup" />
+                  <RadioMenuItem fx:id="largeItem" mnemonicParsing="false" onAction="#handleSizeLarge" text="Large" toggleGroup="$radioGroup" />
                </items>
             </Menu>
         </menus>
